@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Агент по недвижимости в Минске — продажа и подбор жилья без давления и сюрпризов.">
+  <title>Недвижимость Минск — ваш агент</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contacts">К контактам</a>
+
+  <main>
+    <!-- 1. Главный экран -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="hero__inner">
+        <div class="hero__visual">
+          <div class="hero__photo-wrap">
+            <img
+              class="hero__photo"
+              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80"
+              alt="Агент по недвижимости в Минске"
+              width="400"
+              height="500"
+              loading="eager"
+            >
+          </div>
+        </div>
+
+        <div class="hero__content">
+          <p class="hero__badge">Минск · Недвижимость</p>
+          <h1 class="hero__title" id="hero-heading">
+            Продаю вашу недвижимость так дорого, насколько позволяет рынок. Подбираю жилье строго под ваши запросы без давления и нервов. Если бюджет нереальный — скажу прямо, и мы вместе решим, что делать: поднимать планку или искать вариант проще.
+          </h1>
+
+          <div class="accordion" data-accordion>
+            <button
+              class="accordion__trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="approach-panel"
+              id="approach-trigger"
+            >
+              <span>Мой подход к работе</span>
+              <svg class="accordion__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div
+              class="accordion__panel"
+              id="approach-panel"
+              role="region"
+              aria-labelledby="approach-trigger"
+              hidden
+            >
+              <p class="accordion__text">
+                Покупка или продажа квартиры — это огромный шаг и стресс. Я это прекрасно понимаю, поэтому моя задача — забрать этот стресс на себя. Я не занимаюсь навязыванием «выгодных» вариантов ради своей комиссии. Если вам искренне нравится сарай за $100k — мы купим именно его, но я сделаю так, чтобы сделка прошла идеально. Я исполняю ваши пожелания, а не свои планы по продажам.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Чем я занимаюсь -->
+    <section class="services section" id="services" aria-labelledby="services-heading">
+      <div class="section__header">
+        <h2 class="section__title" id="services-heading">Чем я занимаюсь</h2>
+        <p class="section__subtitle">Продажа и покупка — в одном месте</p>
+      </div>
+
+      <div class="tabs" data-tabs>
+        <div class="tabs__list" role="tablist" aria-label="Услуги">
+          <button
+            class="tabs__btn is-active"
+            type="button"
+            role="tab"
+            id="tab-sell"
+            aria-selected="true"
+            aria-controls="panel-sell"
+            data-tab="sell"
+          >
+            Я продаю
+          </button>
+          <button
+            class="tabs__btn"
+            type="button"
+            role="tab"
+            id="tab-buy"
+            aria-selected="false"
+            aria-controls="panel-buy"
+            data-tab="buy"
+            tabindex="-1"
+          >
+            Я покупаю
+          </button>
+        </div>
+
+        <div
+          class="tabs__panel is-active"
+          id="panel-sell"
+          role="tabpanel"
+          aria-labelledby="tab-sell"
+          data-panel="sell"
+        >
+          <ul class="service-list">
+            <li class="service-card">
+              <h3 class="service-card__title">Разбор ситуации</h3>
+              <p class="service-card__text">Детально вникаю в задачу — что со сроками, какие нюансы по документам, чтобы не вылезло сюрпризов.</p>
+            </li>
+            <li class="service-card">
+              <h3 class="service-card__title">Подготовка и визуал</h3>
+              <p class="service-card__text">Отдираем квартиру до блеска, устраняем мелкие косяки по электрике/свету. Делаю проф. фото, обрабатываю и монтирую видео-рилс.</p>
+            </li>
+            <li class="service-card">
+              <h3 class="service-card__title">Максимум трафика</h3>
+              <p class="service-card__text">Выкатываю объект на все живые площадки (Realt, Kufar, Onliner) + в закрытые чаты риелторов. Собираем в 3 раза больше звонков.</p>
+            </li>
+            <li class="service-card">
+              <h3 class="service-card__title">Защита цены</h3>
+              <p class="service-card__text">Иду на торг только с вашего одобрения. В остальных ситуациях бьюсь за каждые $100 вашей выгоды.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="tabs__panel"
+          id="panel-buy"
+          role="tabpanel"
+          aria-labelledby="tab-buy"
+          data-panel="buy"
+          hidden
+        >
+          <ul class="service-list">
+            <li class="service-card">
+              <h3 class="service-card__title">Реальный анализ рынка</h3>
+              <p class="service-card__text">Честно говорю, насколько адекватен ваш запрос под текущий рынок, где можно сторговать, а где цена крайняя.</p>
+            </li>
+            <li class="service-card">
+              <h3 class="service-card__title">Разбор вариантов</h3>
+              <p class="service-card__text">Скидываю объекты, четко расписываю их плюсы и скрытые минусы. На показах ищу дефекты: от косяков ремонта до вентиляции и плесени.</p>
+            </li>
+            <li class="service-card">
+              <h3 class="service-card__title">Агрессивный торг</h3>
+              <p class="service-card__text">Выжимаю из продавца максимальную скидку в вашу пользу.</p>
+            </li>
+            <li class="service-card">
+              <h3 class="service-card__title">Сопровождение «от и до»</h3>
+              <p class="service-card__text">Я с вами на каждом шагу: просмотры, торги, предварительный договор, сбор справок, финальная сделка в БРТИ или у нотариуса.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Реальные кейсы -->
+    <section class="cases section" id="cases" aria-labelledby="cases-heading">
+      <div class="section__header">
+        <h2 class="section__title" id="cases-heading">Реальные кейсы</h2>
+        <p class="section__subtitle">Листайте пальцем влево и вправо</p>
+      </div>
+
+      <div class="carousel" data-carousel>
+        <div class="carousel__track-wrap">
+          <ul class="carousel__track" data-carousel-track>
+            <li class="carousel__slide">
+              <article class="case-card">
+                <span class="case-card__tag">Продажа</span>
+                <h3 class="case-card__title">Евродвушка в ЖК «Каскад»</h3>
+                <p class="case-card__address">ул. Скрыганова, 4Д</p>
+                <p class="case-card__hook">Как продать квартиру на $2&nbsp;000 дороже ожиданий, исправив чужие ошибки маркетинга.</p>
+
+                <dl class="case-card__details">
+                  <div>
+                    <dt>Проблема</dt>
+                    <dd>Собственник продавал сам более полугода. Объявление висело, звонков не было. Падать в цене клиент не хотел.</dd>
+                  </div>
+                  <div>
+                    <dt>Что сделано</dt>
+                    <dd>Заменил перегоревшие лампы, вызвал электриков (починили свет в гардеробной). Сделал фото, видеотур, запустил Reels. Организовал по 2–3 показа в неделю, удерживал нижнюю планку цены, отказывая сомнительным покупателям.</dd>
+                  </div>
+                  <div>
+                    <dt>Результат</dt>
+                    <dd>За 1,5 месяца и 20+ показов квартира продана <strong>без торга</strong>. Собственник получил на $2&nbsp;000 больше, чем рассчитывал.</dd>
+                  </div>
+                </dl>
+              </article>
+            </li>
+
+            <li class="carousel__slide">
+              <article class="case-card">
+                <span class="case-card__tag case-card__tag--buy">Подбор</span>
+                <h3 class="case-card__title">Стильное жилье для молодой клиентки</h3>
+                <p class="case-card__hook">Как уберечь клиента от покупки «красивой катастрофы» с плесенью и сторговать 8% от стоимости.</p>
+
+                <dl class="case-card__details">
+                  <div>
+                    <dt>Проблема</dt>
+                    <dd>Девушка 20 лет искала студию в Минск-Мире. Запросы постоянно менялись (от студий к евродвушкам и обратно). Нужен был комфорт без давления.</dd>
+                  </div>
+                  <div>
+                    <dt>Что сделано</dt>
+                    <dd>Вовремя обнаружил скрытую плесень и вздутую краску в «красивой» евродвушке в Минск-Мире, уберег от покупки. Перестроил поиск на обжитые районы. Нашел ухоженную студию 1970-х с крутым ремонтом.</dd>
+                  </div>
+                  <div>
+                    <dt>Результат</dt>
+                    <dd>Сбил цену с $67&nbsp;000 до $64&nbsp;500 (экономия 8%). Клиентка получила идеальный вариант без стресса и скрытых проблем.</dd>
+                  </div>
+                </dl>
+              </article>
+            </li>
+          </ul>
+        </div>
+
+        <div class="carousel__dots" data-carousel-dots></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 4. Подвал и контакты -->
+  <footer class="footer" id="contacts">
+    <div class="footer__inner">
+      <h2 class="footer__title">Связаться</h2>
+      <p class="footer__text">Бесплатная консультация — без обязательств</p>
+
+      <div class="footer__cta">
+        <a class="btn btn--sell" href="https://t.me/your_username" target="_blank" rel="noopener noreferrer">
+          Бесплатная консультация по продаже
+        </a>
+        <a class="btn btn--buy" href="https://t.me/your_username" target="_blank" rel="noopener noreferrer">
+          Бесплатная консультация по покупке
+        </a>
+      </div>
+
+      <nav class="social" aria-label="Мессенджеры и телефон">
+        <a class="social__link social__link--telegram" href="https://t.me/your_username" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+          </svg>
+        </a>
+        <a class="social__link social__link--viber" href="viber://chat?number=%2B375000000000" aria-label="Viber">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18.364 4.636C16.8 3.072 14.64 2.2 12.2 2.05 7.4 1.75 3.5 5.05 3.05 9.8c-.2 2.1.3 4.1 1.4 5.8L3.5 20.5l5.1-1.2c1.5.8 3.2 1.2 5 1.1 4.7-.4 8.5-4.3 8.9-9 .15-2.4-.7-4.55-2.06-6.78zM12 18.5c-1.5 0-3-.4-4.3-1.1l-.3-.2-3 .7.8-2.9-.2-.3c-.8-1.3-1.2-2.8-1.1-4.4.3-3.8 3.6-6.7 7.4-6.4 1.9.15 3.7.9 5 2.3 1.3 1.4 2 3.2 1.9 5.1-.3 3.9-3.7 6.9-7.5 6.9zm4.2-5.3c-.2-.1-1.2-.6-1.4-.7-.2-.1-.3-.1-.5.1s-.6.7-.7.9c-.1.2-.3.2-.5.1-.2-.1-.9-.3-1.7-1-.6-.6-1.1-1.3-1.2-1.5-.1-.2 0-.3.1-.4.1-.1.2-.3.3-.4.1-.1.1-.2.2-.3.1-.1 0-.2 0-.3 0-.1-.5-1.2-.7-1.6-.2-.4-.4-.3-.5-.3h-.4c-.1 0-.3.1-.4.2-.2.2-.6.6-.6 1.4 0 .8.6 1.6.7 1.7.1.2 1.2 1.9 3 2.6.4.2.8.3 1.1.3.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.1-.4-.2z"/>
+          </svg>
+        </a>
+        <a class="social__link social__link--whatsapp" href="https://wa.me/375000000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </a>
+        <a class="social__link social__link--phone" href="tel:+375000000000" aria-label="Позвонить">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </nav>
+
+      <p class="footer__copy">© 2026 · Минск</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
