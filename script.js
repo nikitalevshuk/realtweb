@@ -23,12 +23,7 @@ function initAccordion() {
   trigger.addEventListener("click", () => {
     const isOpen = root.classList.toggle("is-open");
     trigger.setAttribute("aria-expanded", String(isOpen));
-
-    if (isOpen) {
-      panel.removeAttribute("hidden");
-    } else {
-      panel.setAttribute("hidden", "");
-    }
+    panel.setAttribute("aria-hidden", String(!isOpen));
   });
 }
 

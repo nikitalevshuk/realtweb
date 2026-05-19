@@ -24,6 +24,7 @@
   --space-2xl: 2.5rem;
   --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-accordion: 0.55s cubic-bezier(0.33, 1, 0.68, 1);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-top: env(safe-area-inset-top, 0px);
 
@@ -127,7 +128,7 @@ ul {
   width: 100%;
   max-width: 280px;
   margin: 0 auto;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-md);
@@ -200,7 +201,8 @@ ul {
 
 .accordion__icon {
   flex-shrink: 0;
-  transition: transform var(--transition);
+  transition: transform var(--transition-accordion);
+  transform-origin: center;
 }
 
 .accordion.is-open .accordion__icon {
@@ -210,23 +212,15 @@ ul {
 .accordion__panel {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows var(--transition);
+  transition: grid-template-rows var(--transition-accordion);
 }
 
 .accordion.is-open .accordion__panel {
   grid-template-rows: 1fr;
 }
 
-.accordion__panel > .accordion__text {
+.accordion__panel-inner {
   overflow: hidden;
-}
-
-.accordion__panel[hidden] {
-  display: none;
-}
-
-.accordion.is-open .accordion__panel[hidden] {
-  display: grid;
 }
 
 .accordion__text {
@@ -235,6 +229,16 @@ ul {
   font-size: 0.875rem;
   line-height: 1.6;
   color: var(--text-muted);
+  opacity: 0;
+  transform: translateY(-6px);
+  transition:
+    opacity var(--transition-accordion),
+    transform var(--transition-accordion);
+}
+
+.accordion.is-open .accordion__text {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* --------------------------------------------------------------------------
@@ -331,6 +335,7 @@ ul {
 
   .accordion__panel,
   .accordion__icon,
+  .accordion__text,
   .carousel__track {
     transition: none;
   }
