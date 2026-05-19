@@ -251,6 +251,11 @@ ul {
 
 .services.section {
   padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+}
+
+.cases.section {
+  padding-top: var(--space-md);
 }
 
 .section__header {
