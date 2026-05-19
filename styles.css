@@ -112,11 +112,15 @@ ul {
     var(--space-lg);
 }
 
+/* Без лишней пустоты под аккордеоном, когда он закрыт */
+.hero:has(.accordion:not(.is-open)) {
+  min-height: auto;
+}
+
 .hero__inner {
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
-  flex: 1;
 }
 
 .hero__visual {
@@ -146,7 +150,6 @@ ul {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
-  flex: 1;
 }
 
 .hero__badge {
@@ -170,7 +173,7 @@ ul {
 /* Accordion */
 
 .accordion {
-  margin-top: auto;
+  margin-top: var(--space-sm);
   background: var(--bg-elevated);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
@@ -212,6 +215,7 @@ ul {
 .accordion__panel {
   display: grid;
   grid-template-rows: 0fr;
+  min-height: 0;
   transition: grid-template-rows var(--transition-accordion);
 }
 
@@ -225,18 +229,20 @@ ul {
 
 .accordion__text {
   margin: 0;
-  padding: 0 var(--space-lg) var(--space-lg);
+  padding: 0 var(--space-lg);
   font-size: 0.875rem;
   line-height: 1.6;
   color: var(--text-muted);
   opacity: 0;
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   transition:
     opacity var(--transition-accordion),
-    transform var(--transition-accordion);
+    transform var(--transition-accordion),
+    padding var(--transition-accordion);
 }
 
 .accordion.is-open .accordion__text {
+  padding-bottom: var(--space-lg);
   opacity: 1;
   transform: translateY(0);
 }
