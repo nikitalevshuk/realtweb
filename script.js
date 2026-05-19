@@ -8,6 +8,7 @@
   initAccordion();
   initTabs();
   initCarousel();
+  initVideoModal();
 })();
 
 /* ---------- Accordion ---------- */
@@ -163,4 +164,47 @@ function initCarousel() {
   window.addEventListener("resize", () => goTo(index, false));
   measure();
   goTo(0, false);
+}
+
+/* ---------- Video modal ---------- */
+
+function initVideoModal() {
+  const modal = document.getElementById("video-modal");
+  const video = document.getElementById("video-modal-video");
+  const openBtn = document.querySelector("[data-video-open]");
+  if (!modal || !video || !openBtn) return;
+
+  let lastFocused = null;
+
+  function openModal() {
+    lastFocused = document.activeElement;
+    modal.removeAttribute("hidden");
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("is-modal-open");
+    modal.querySelector(".video-modal__close")?.focus();
+  }
+
+  function closeModal() {
+    video.pause();
+    modal.classList.remove("is-open");
+    modal.setAttribute("hidden", "");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("is-modal-open");
+    if (lastFocused && typeof lastFocused.focus === "function") {
+      lastFocused.focus();
+    }
+  }
+
+  openBtn.addEventListener("click", openModal);
+
+  modal.querySelectorAll("[data-video-close]").forEach((el) => {
+    el.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("is-open")) {
+      closeModal();
+    }
+  });
 }

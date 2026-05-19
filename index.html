@@ -122,6 +122,19 @@
             <li class="service-card">
               <h3 class="service-card__title">Подготовка и визуал</h3>
               <p class="service-card__text">Отдираем квартиру до блеска, устраняем мелкие косяки по электрике/свету. Делаю проф. фото, обрабатываю и монтирую видео-рилс.</p>
+              <button
+                type="button"
+                class="video-example"
+                data-video-open
+                aria-haspopup="dialog"
+              >
+                <span class="video-example__icon" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
+                    <path d="M3.5 2.25v9.5l7.75-4.75-7.75-4.75z"/>
+                  </svg>
+                </span>
+                Посмотреть пример рекламы
+              </button>
             </li>
             <li class="service-card">
               <h3 class="service-card__title">Максимум трафика</h3>
@@ -268,6 +281,38 @@
       <p class="footer__copy">© 2026 · Минск</p>
     </div>
   </footer>
+
+  <div
+    class="video-modal"
+    id="video-modal"
+    hidden
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="video-modal-title"
+    aria-hidden="true"
+  >
+    <button type="button" class="video-modal__backdrop" data-video-close aria-label="Закрыть видео"></button>
+    <button type="button" class="video-modal__close" data-video-close aria-label="Закрыть">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <div class="video-modal__dialog">
+      <p id="video-modal-title" class="visually-hidden">Пример рекламного видео</p>
+      <div class="video-modal__player">
+        <video
+          id="video-modal-video"
+          src="./promo.mp4"
+          controls
+          playsinline
+          preload="metadata"
+          aria-label="Пример рекламного видео"
+        >
+          Ваш браузер не поддерживает воспроизведение видео.
+        </video>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
