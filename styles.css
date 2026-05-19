@@ -103,18 +103,12 @@ ul {
    -------------------------------------------------------------------------- */
 
 .hero {
-  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   padding:
     calc(var(--safe-top) + var(--space-md))
     var(--space-md)
-    var(--space-lg);
-}
-
-/* Без лишней пустоты под аккордеоном, когда он закрыт */
-.hero:has(.accordion:not(.is-open)) {
-  min-height: auto;
+    var(--space-md);
 }
 
 .hero__inner {
@@ -253,6 +247,10 @@ ul {
 
 .section {
   padding: var(--space-2xl) var(--space-md);
+}
+
+.services.section {
+  padding-top: var(--space-md);
 }
 
 .section__header {
